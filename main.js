@@ -18,8 +18,10 @@ function createWindow () {
     slashes: true
   }));
 
+// Open the DevTools.
+win.webContents.openDevTools()
 
-  win.on('closed', () => {
+    win.on('closed', () => {
     win = null
   });
 }

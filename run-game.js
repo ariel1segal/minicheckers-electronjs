@@ -3,6 +3,9 @@
 // version: 0.04
 // version info: In file version-info.txt
 
+var turn = 'RED'; // values: 'RED', 'BLACK'
+var prevTurn = 'BLACK'; // previous turn
+
 // define constructor for Spot object
 // A gameboard contains spots, where the pieces can be or moved to.
 function Spot(s, u, d, r, l, p, pr, i, sp)
@@ -117,8 +120,8 @@ function graphicMove(moveTo, picId) // moveTo: spot index to move, picId: image 
    document.getElementById(picId).src = "blank50.gif";
 
    // record the move
-   Record[recIndex].color = turn;
-   Record[recIndex++].piece = picId;
+   //Record[recIndex].color = window.turn;
+   //Record[recIndex++].piece = picId;
 }
 
 function goUp(cspot) // parameter is the spot of the piece that moves
@@ -195,8 +198,6 @@ function goLeft(cspot) // parameter is the spot of the piece that moves
 
 // Turn Functions -------------------------------------------------------------
 // keep track of the turns
-var turn = 'RED'; // values: 'RED', 'BLACK'
-var prevTurn = 'BLACK'; // previous turn
 
 function changeTurns()
 {
