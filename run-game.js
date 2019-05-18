@@ -59,26 +59,9 @@ Board[22] = new Spot('BLACK',17,null,23,21,17,21,"spotId22","tdid22");
 Board[23] = new Spot('RED',18,null,24,22,18,24,"spotId23","tdid23");
 Board[24] = new Spot('BLACK',19,null,null,23,19,23,"spotId24","tdid24");
 
-// Define constructor for Step object. This object contains a step in the game.
-// The info saved in a step is the turn and the piece that moves.
-var recIndex; // index for Record
-function Step()
-{
-   this.color = null;  // contains the turn
-   this.piece = null;  // contains picId
-}
-
-// Define the record
-var Record = new Array(boardSize);
-
 // init game
 function initGame()
 {
-   recIndex = 0;
-   for(var i =0; i < boardSize; i++)
-   {
-      Record[i] = new Step();
-   }
 }
 
 // find number of spot from spotId
@@ -94,18 +77,6 @@ function getSpotNumber(s) // paramwret is a string
    return number;  // return a string
 }
 
-// show the steps
-function showSteps()
-{
-   var steps="\n";
-   for(var i=0; (i < boardSize) && (Record[i].piece != null); i++)
-   {
-      steps += Record[i].color+" "+getSpotNumber(Record[i].piece)+"\n";
-   }
-   alert("Game's Steps\n"+steps);
-}
-
-// Game Steps
 // Keep track of the blank spot
 var blankSpot = Board[12];
 
@@ -118,10 +89,6 @@ function graphicMove(moveTo, picId) // moveTo: spot index to move, picId: image 
 {
    document.getElementById(Board[moveTo].picid).src = document.getElementById(picId).src;
    document.getElementById(picId).src = "blank50.gif";
-
-   // record the move
-   //Record[recIndex].color = window.turn;
-   //Record[recIndex++].piece = picId;
 }
 
 function goUp(cspot) // parameter is the spot of the piece that moves
