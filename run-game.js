@@ -24,44 +24,52 @@ function Spot(s, u, d, r, l, p, pr, i, sp)
 // Define the playing board as an array of Spots.
 var boardSize = 25;
 var Board = new Array(boardSize);
-// first row
-Board[ 0] = new Spot('BLACK',null,5,1,null,5,1,"spotId0","tdid0");
-Board[ 1] = new Spot('RED',null,6,2,0,6,0,"spotId1","tdid1");
-Board[ 2] = new Spot('BLACK',null,7,3,1,7,7,"spotId2","tdid2");
-Board[ 3] = new Spot('RED',null,8,4,2,8,4,"spotId3","tdid3");
-Board[ 4] = new Spot('BLACK',null,9,null,3,9,3,"spotId4","tdid4");
+function initBoard()
+{
+   // first row
+   Board[ 0] = new Spot('BLACK',null,5,1,null,5,1,"spotId0","tdid0");
+   Board[ 1] = new Spot('RED',null,6,2,0,6,0,"spotId1","tdid1");
+   Board[ 2] = new Spot('BLACK',null,7,3,1,7,7,"spotId2","tdid2");
+   Board[ 3] = new Spot('RED',null,8,4,2,8,4,"spotId3","tdid3");
+   Board[ 4] = new Spot('BLACK',null,9,null,3,9,3,"spotId4","tdid4");
 
-// second row
-Board[ 5] = new Spot('RED',0,10,6,null,0,10,"spotId5","tdid5");
-Board[ 6] = new Spot('BLACK',1,11,7,5,1,11,"spotId6","tdid6");
-Board[ 7] = new Spot('RED',2,12,8,6,2,2,"spotId7","tdid7");
-Board[ 8] = new Spot('BLACK',3,13,9,7,3,9,"spotId8","tdid8");
-Board[ 9] = new Spot('RED',4,14,null,8,4,8,"spotId9","tdid9");
+   // second row
+   Board[ 5] = new Spot('RED',0,10,6,null,0,10,"spotId5","tdid5");
+   Board[ 6] = new Spot('BLACK',1,11,7,5,1,11,"spotId6","tdid6");
+   Board[ 7] = new Spot('RED',2,12,8,6,2,2,"spotId7","tdid7");
+   Board[ 8] = new Spot('BLACK',3,13,9,7,3,9,"spotId8","tdid8");
+   Board[ 9] = new Spot('RED',4,14,null,8,4,8,"spotId9","tdid9");
 
-// third row
-Board[10] = new Spot('BLACK',5,15,11,null,11,5,"spotId10","tdid10");
-Board[11] = new Spot('RED',6,16,12,10,10,6,"spotId11","tdid11");
-Board[12] = new Spot('BLANK',7,17,13,11,null,13,"spotId12","tdid12");
-Board[13] = new Spot('RED',8,18,14,12,14,12,"spotId13","tdid13");
-Board[14] = new Spot('BLACK',9,19,null,13,13,19,"spotId14","tdid14");
+   // third row
+   Board[10] = new Spot('BLACK',5,15,11,null,11,5,"spotId10","tdid10");
+   Board[11] = new Spot('RED',6,16,12,10,10,6,"spotId11","tdid11");
+   Board[12] = new Spot('BLANK',7,17,13,11,null,13,"spotId12","tdid12");
+   Board[13] = new Spot('RED',8,18,14,12,14,12,"spotId13","tdid13");
+   Board[14] = new Spot('BLACK',9,19,null,13,13,19,"spotId14","tdid14");
 
-// fourth row
-Board[15] = new Spot('RED',10,20,16,null,20,20,"spotId15","tdid15");
-Board[16] = new Spot('BLACK',11,21,17,15,21,null,"spotId16","tdid16");
-Board[17] = new Spot('RED',12,22,18,16,22,18,"spotId17","tdid17");
-Board[18] = new Spot('BLACK',13,23,19,17,23,17,"spotId18","tdid18");
-Board[19] = new Spot('RED',14,24,null,18,24,14,"spotId19","tdid19");
+   // fourth row
+   Board[15] = new Spot('RED',10,20,16,null,20,20,"spotId15","tdid15");
+   Board[16] = new Spot('BLACK',11,21,17,15,21,null,"spotId16","tdid16");
+   Board[17] = new Spot('RED',12,22,18,16,22,18,"spotId17","tdid17");
+   Board[18] = new Spot('BLACK',13,23,19,17,23,17,"spotId18","tdid18");
+   Board[19] = new Spot('RED',14,24,null,18,24,14,"spotId19","tdid19");
 
-// fifth row
-Board[20] = new Spot('BLACK',15,null,21,null,15,15,"spotId20","tdid20");
-Board[21] = new Spot('RED',16,null,22,20,16,22,"spotId21","tdid21");
-Board[22] = new Spot('BLACK',17,null,23,21,17,21,"spotId22","tdid22");
-Board[23] = new Spot('RED',18,null,24,22,18,24,"spotId23","tdid23");
-Board[24] = new Spot('BLACK',19,null,null,23,19,23,"spotId24","tdid24");
+   // fifth row
+   Board[20] = new Spot('BLACK',15,null,21,null,15,15,"spotId20","tdid20");
+   Board[21] = new Spot('RED',16,null,22,20,16,22,"spotId21","tdid21");
+   Board[22] = new Spot('BLACK',17,null,23,21,17,21,"spotId22","tdid22");
+   Board[23] = new Spot('RED',18,null,24,22,18,24,"spotId23","tdid23");
+   Board[24] = new Spot('BLACK',19,null,null,23,19,23,"spotId24","tdid24");
+}
+
+// Keep track of the blank spot
+let blankSpot;
 
 // init game
 function initGame()
 {
+   initBoard()
+   blankSpot = Board[12];
 }
 
 // find number of spot from spotId
@@ -76,9 +84,6 @@ function getSpotNumber(s) // paramwret is a string
    }
    return number;  // return a string
 }
-
-// Keep track of the blank spot
-var blankSpot = Board[12];
 
 function updateBlankSpot(cspot) // parameter is the mew blank spot
 {
