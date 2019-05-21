@@ -70,7 +70,7 @@ function initBoard()
 }
 
 // Keep track of the blank spot
-let blankSpot;
+let blankSpot = Board[12];
 
 // init game
 function initGame()
