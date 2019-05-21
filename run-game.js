@@ -636,7 +636,9 @@ function checkWhoWins()
    }
    if(winCount == 4)
    {
-      alert(notTurn()+" WINS!")
+      setTimeout(function(){
+         alert(notTurn()+" WINS!");
+     }, 100);
       return true;
    }
    return false;
