@@ -65,7 +65,7 @@ function initBoard()
    for(i = 0; i < boardSize; i++)
    {
       let cell = document.getElementById(Board[i])
-      cell.getElementById("spotId" + i.toString()).src = (i%2===0? "black-piece50.gif": "red-piece50.gif");
+      cell.getElementById("spotId" + i.toString()).src = (i%2==0? "black-piece50.gif": "red-piece50.gif");
    }
 }
 
