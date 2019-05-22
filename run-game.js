@@ -59,28 +59,27 @@ Board[22] = new Spot('BLACK',17,null,23,21,17,21,"spotId22","tdid22");
 Board[23] = new Spot('RED',18,null,24,22,18,24,"spotId23","tdid23");
 Board[24] = new Spot('BLACK',19,null,null,23,19,23,"spotId24","tdid24");
 
+// Keep track of the blank spot
+let blankSpot = Board[12];
+
 function initBoard()
 {
    let i;
    for(i = 0; i < boardSize; i++)
    {
-      let cell = document.getElementById(Board[i].picid)
-      let state = document.getElementById(Board[i].state)
+      let img = document.getElementById(Board[i].picid)
       if(i == 12)
       {
-         cell.src = "blank50.gif"
-         state = 'BLANK'
+         img.src = "blank50.gif"
+         Board[i].state = 'BLANK'
       }
       else
       {
-         cell.src = (i%2==0? "black-piece50.gif": "red-piece50.gif");
-         state = (i%2==0? 'BLACK': 'RED');
+         img.src = (i%2==0? "black-piece50.gif": "red-piece50.gif");
+         Board[i].state = (i%2==0? 'BLACK': 'RED');
       }
    }
 }
-
-// Keep track of the blank spot
-let blankSpot = Board[12];
 
 // init game
 function initGame()
