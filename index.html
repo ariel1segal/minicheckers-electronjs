@@ -13,7 +13,7 @@
   </body>
     <button id="debugBtn">Debug</button>
 
-   <form>
+   <form id = "userChoices">
       <h3>Red goes first. Default: Computer playes BLACK.<br>
       Choose level:
       <select name="levelSelect" onchange="playerSelectsLevel(levelSelect)">
@@ -21,10 +21,10 @@
          </option><option>EASY
       </option></select>
       Choose color:
-      <select name="colorSelect" onchange="playerSelectsColor(colorSelect)">
-         <option>RED
-         </option><option>BLACK
-      </option></select>
+      <select id = "colorOptions" name="colorSelect" onchange="playerSelectsColor(colorSelect)">
+         <option value = "1">RED</option>
+         <option value = "0"> BLACK</option>
+      </select>
       </h3>
    </form>
 

@@ -86,6 +86,19 @@ function initGame()
 {
    initBoard()
    blankSpot = Board[12];
+   let colorOptions = document.getElementById("colorOptions")
+   let selection = colorOptions.options[colorOptions.selectedIndex].text
+   switch(selection)
+   {
+      case 'RED':
+         turn = 'RED'; 
+         prevTurn = 'BLACK';
+         break;
+      case 'BLACK':
+         turn = 'BLACK'; 
+         prevTurn = 'RED';
+         break;
+   }
 }
 
 // find number of spot from spotId
