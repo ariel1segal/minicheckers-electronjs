@@ -6,27 +6,27 @@
         <script language="JavaScript" src="./run-game.js"></script>
     </head>
 <body><!--'"</title></head>-->
-    <button id="helpBtn">Help</button>
-    <script>
-      require('./help.js')
-    </script>
-  </body>
-    <button id="debugBtn">Debug</button>
-
+   <div class = "div1">
+      <button id="helpBtn">Help</button>
+      <script>
+         require('./help.js')
+      </script>
+      <button id="debugBtn">Debug</button>
    <form id = "userChoices">
-      <h3>Red goes first. Default: Computer playes BLACK.<br>
+      <p>
       Choose level:
       <select name="levelSelect" onchange="playerSelectsLevel(levelSelect)">
          <option>HARD
          </option><option>EASY
-      </option></select>
+      </option></select><br>
       Choose color:
       <select id = "colorOptions" name="colorSelect" onchange="playerSelectsColor(colorSelect)">
          <option>RED</option>
          <option> BLACK</option>
       </select>
-      </h3>
+      </p>
    </form>
+</div>
 
 <!-- Board's Table -->
 <table class="center" border="">
@@ -121,5 +121,6 @@
 <form>
    <input type="button" value="New Game" onclick="initGame()">
  </form>
- </body>
+ <button type="button" onclick="window.close()">Close</button>
+</body>
 </html>
