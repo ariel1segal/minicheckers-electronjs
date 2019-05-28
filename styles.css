@@ -6,6 +6,7 @@ body{
 table
 {
     background-color: rgb(80, 172, 164);
+    border-collapse: collapse;
 }
 table.center {
     margin-left:auto; 
