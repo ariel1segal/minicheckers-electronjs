@@ -14,8 +14,8 @@ function createWindow () {
   win.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
-    slashes: true /*,
-    icon: path.join(__dirname, 'minicheckers_64x64.jpg') */
+    slashes: true ,
+    icon: path.join(__dirname, 'minicheckers_64x64.png')
   }));
 
 // Open the DevTools.
